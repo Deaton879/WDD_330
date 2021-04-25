@@ -1,0 +1,96 @@
+body {
+  text-align: center;
+}
+
+body header {
+  background-color: royalblue;
+  margin: auto;
+  padding: 1em;
+  border: ridge darkblue;
+}
+
+body header h1 {
+  color: whitesmoke;
+  text-shadow: black 2px 2px 3px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body main h2, body main h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body main section {
+  padding: 1em;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+body main ol li, body main ul li {
+  padding: .5em;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-shadow: lightblue 1px 1px 1px;
+}
+
+body main ol li a, body main ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: green;
+}
+
+body main ol li a:hover, body main ul li a:hover {
+  color: fuchsia;
+}
+
+body main ul {
+  list-style: none;
+  padding: 0px;
+}
+
+body footer {
+  padding: 1em;
+  background-color: crimson;
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: black 2px 2px 3px;
+  border: ridge darkred;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#event1, label, button {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.goBack {
+  color: #ebe9e9;
+  display: block;
+  padding: .3em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto 0px auto;
+  background-color: #32adfa;
+  border-radius: 7px;
+  border: double 7px black;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 0px 3px black;
+          box-shadow: 0px 0px 3px black;
+}
+
+.goBack:hover {
+  color: whitesmoke;
+  border-radius: 9px;
+  background-color: #42a2df;
+  -webkit-box-shadow: 0px 0px 3px black;
+          box-shadow: 0px 0px 3px black;
+}
+
+.hints {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 1em;
+  font-weight: bold;
+  color: blue;
+}
+/*# sourceMappingURL=styles.css.map */

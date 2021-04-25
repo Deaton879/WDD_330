@@ -1,0 +1,89 @@
+body {
+    text-align: center;
+    header {
+        background-color: royalblue;
+        margin: auto;
+        padding: 1em;
+        border: ridge darkblue;
+        h1 {
+            color: whitesmoke;
+            text-shadow: black 2px 2px 3px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+    
+    main {
+        h2, h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        section {
+            padding: 1em;
+            margin: auto;
+            width: fit-content;
+            
+        }
+        ol, ul {
+                
+            li {
+                padding: .5em;
+                font-weight: bold;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-shadow: lightblue 1px 1px 1px;                    
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: green;
+
+                }
+                a:hover {
+                    color: fuchsia;
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0px;
+        }
+    
+    }
+    
+    footer {
+        padding: 1em;
+        background-color: crimson;
+        color: whitesmoke;
+        font-weight: bold;
+        text-shadow: black 2px 2px 3px;
+        border: ridge darkred;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+#event1, label, button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.goBack {
+    color: rgb(235, 233, 233);
+    display: block;
+    padding: .3em;
+    width: fit-content;
+    margin: 10px auto 0px auto;
+    background-color: rgb(50, 173, 250);
+    border-radius: 7px;
+    border: double 7px black;
+    text-decoration: none;
+    box-shadow: 0px 0px 3px black;
+}
+.goBack:hover {
+    color: whitesmoke;
+    border-radius: 9px;
+    background-color: rgb(66, 162, 223);
+    box-shadow: 0px 0px 3px black;
+}
+
+.hints {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 1em;
+    font-weight: bold;
+    color: blue;
+}

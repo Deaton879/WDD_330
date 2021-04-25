@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 01</title>
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header><h1>WDD 330 Portfolio</h1></header>
+
+        <main>
+
+            <section>
+                <h2>Week 01</h2>
+                <button type="button" onclick="clickedMe()" id="pressMe">Press Me!</button>
+            </section>
+            
+            <div id="event1"></div>
+
+            <hr><br>
+
+            <p class="hints">Enter the title of a story saved to the database, and press "find a story" to read it..</p>
+            
+            <label for="title"><b>Story Title:</b></label>
+            <input type="text" name="title" id="title">
+            <button type="button" onclick="findStory()">Find a story</button><br>
+
+            <p class="hints">..alternatively, you can write and save your own story below (don't forget a title!)</p>
+
+            <textarea name="story" id="story" cols="50" rows="10" placeholder="Spin me a tale..."></textarea><br>
+            <button type="button" onclick="submit()">Save for future generations</button><br><br>
+
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREVIOUS PAGE</a>   
+    </footer>
+
+    <script>
+
+        const stories = [];
+
+        function clickedMe() {
+            // When the button is clicked, a text node is created in a div to explain the example below
+            let element = document.getElementById("event1");
+            let greeting = document.createElement("p");
+            // Button is disabled to prevent multiple nodes from being created
+            document.getElementById("pressMe").disabled = true;
+            greeting.appendChild(document.createTextNode("Below is an exercise using JavaScript to store/retrieve user input with local storage..."));
+            element.appendChild(greeting);
+        }
+
+        function submit() {
+            // access both the title and the story nodes
+            let s = document.getElementById("story");
+            let t = document.getElementById("title");
+
+            // store those values in an object as a key:value pair
+            let story = { title: t.value, story: s.value };
+
+            // store that object in an array called stories
+            stories.push(story);
+            console.log(story);
+            console.log(stories);
+
+            // reset the title and textarea 
+            s.value = null;
+            t.value = null;
+
+        }
+
+        function findStory() {
+            // save the submitted title to reference
+            let t = document.getElementById("title").value;
+
+            // If no stories are on file
+            if (stories.length === 0) {
+                document.getElementById("story").value = "There are currently no save stories on file";
+            }
+
+            // look a matching title in "local storage"
+            for(let s in stories) {
+                /* if the user submits a title that matches a title in the stories array, 
+                   the story associated with that title will be displayed in the textarea */
+                if (stories[s].title === t) {
+                    let story = stories[s].story;
+                    document.getElementById("story").value = story;
+                    break;
+                }
+                // If there is no title match:
+                else {
+                    document.getElementById("story").value = "No story by that title is on file";
+                }
+            }
+            
+            // If no title was given (input left blank)
+            if( t === "" ) {
+                document.getElementById("story").value = "Enter a title to find a story";
+            }
+        }
+    </script>
+</html>
