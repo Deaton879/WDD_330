@@ -87,3 +87,12 @@ body {
     font-weight: bold;
     color: blue;
 }
+
+#buttonBoard {
+    display: flex;
+    .buttonNode {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+}

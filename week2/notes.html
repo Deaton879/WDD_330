@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 02</title>
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #checkerboard{
+                width: 500px;
+                display: flex;
+                flex-direction: row;
+                flex-flow: wrap;
+                margin: auto;
+            } 
+            #f1 {
+                
+                margin-bottom: 15px; 
+            }
+
+            #oa1, #oa2 {
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header><h1>WDD 330 Portfolio</h1></header>
+
+        <main>
+
+            <section>
+                <h2>Week 02 Exercises</h2>
+            </section>
+            
+            <section id="buttonBoard">
+                
+                <div class="buttonNode">
+                    <label for="ps1">2.3 Checkerboard</label>
+                    <p>Click to make a checkerboard</p>
+                    <button type="button" name="ps1" onclick="runps1()">run code</button>
+                </div>
+                <div class="buttonNode">
+                    <label for="f1">3.3 Bean Counting</label>
+                    <p>Write a word to count the letters</p>
+                    <input type="text" id="f1">
+                    <button type="button" name="f1" onclick="runf1(this.name)">run code</button>
+                </div>
+                <div class="buttonNode">
+                    <label for="oa">4.1 Sum of a range</label>
+                    <p>Identify a range of numbers with a starting<br>
+                        number and an ending number. Run code to <br>
+                        find the sum of all numbers in that range.</p>
+                    <input type="number" id="oa1">
+                    <input type="number" id="oa2">
+                    <button type="button" name="oa" onclick="runoa()">run code</button>
+                </div>
+
+            </section>
+            <hr>
+        </main>
+        <section id="checkerboard"></section>
+
+        <hr>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREVIOUS PAGE</a>   
+    </footer>
+
+    <script>
+
+        const checkerboard = document.getElementById('checkerboard');
+
+        function runps1() {
+
+            
+            // Reset the container
+            checkerboard.innerHTML = "";
+            // Explain the example
+            writeInfo("From Eloquent Javascript - Chapter 2: Program Structure - Creating a Chessboard using looping functions");
+
+            // Create the checkerboard with nested for loops
+            let rows = 5;
+            for(let x = 0; x < rows; x++) {
+                for(let y = 0; y < rows; y++) {
+                    if ((y+x) % 2 == 0) {
+                        let div = document.createElement('div');
+                        div.style.background = "black";
+                        div.style.width = "100px"
+                        div.style.height = "100px";
+                        div.setAttribute("class", "checker");
+                        checkerboard.appendChild(div);
+                    } else {
+                        let div = document.createElement('div');
+                        div.style.background = "yellow";
+                        div.style.width = "100px";
+                        div.style.height = "100px";
+                        div.setAttribute("class", "checker");
+                        checkerboard.appendChild(div);
+                    }
+                }
+            }
+        }
+
+        function writeInfo(text) {
+
+            // Set information for the example
+            let info = document.createElement("p");
+            info.innerHTML = text;
+            info.style.fontFamily = "Sans-Serif";
+            checkerboard.appendChild(info);
+
+        }
+
+        function runf1(name) {
+
+            // Reset the container
+            checkerboard.innerHTML = "";
+            
+
+            let word = document.getElementById(name).value;
+            let letters = 0;
+
+            for(let n = 0; n < word.length; n++) {
+                letters++;
+            }
+            checkerboard.innerHTML = "The word " + word + " has " + letters + " letters";
+        }
+
+        function runoa() {
+
+            // Reset the container
+            checkerboard.innerHTML = "";
+
+            let num1 = parseInt(document.getElementById('oa1').value);
+            let num2 = parseInt(document.getElementById('oa2').value);
+            
+            let range = [];
+            for(let i = num1; i<= num2; i++){
+                range.push(i);
+            }
+            
+            let sum = 0;
+            for(let num in range) {
+                sum += parseInt(num);
+            }
+            writeInfo("Using a for loop, an array is created to hold every number from " + num1 + " to " + num2 + ".");
+            
+            checkerboard.innerHTML = "The total sum of all number in the range of " + num1 + " - " + num2 + " is: " + sum;
+        }   
+
+    </script>
+</html>

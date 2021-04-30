@@ -93,4 +93,21 @@ body footer {
   font-weight: bold;
   color: blue;
 }
+
+#buttonBoard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#buttonBoard .buttonNode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+}
 /*# sourceMappingURL=styles.css.map */
