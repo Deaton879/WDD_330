@@ -110,4 +110,12 @@ body footer {
           flex-direction: column;
   padding: 1em;
 }
+
+#clickCounter {
+  font-family: cursive;
+}
+
+#displayOutput {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 /*# sourceMappingURL=styles.css.map */
