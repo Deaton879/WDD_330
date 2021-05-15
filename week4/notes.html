@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 01</title>
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header><h1>WDD 330 Portfolio</h1></header>
+
+        <main>
+
+          <section>
+            <h2 id="changingTitle">Start by pressing the button labeled "Start HERE</h2>
+          </section><hr>
+          
+          <section>
+            <p id="displayOutput"></p>
+          </section>
+          
+
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREVIOUS PAGE</a>   
+    </footer>
+
+    <script>
+
+        
+
+        let display = document.getElementById('displayOutput');
+        let title = document.getElementById("changingTitle");
+
+        function buildDisplay(n) {
+
+          display.innerHTML = '';
+
+          switch(n) {
+            case 1: 
+              document.getElementById("2").disabled = false;
+              document.getElementById("1").disabled = true;
+              title.innerHTML = "Now let the buttons guide you...";
+              display.innerHTML = 'This is a demonstration on manipulating the HTML DOM using Javascript Event Listeners.';
+              break;
+            
+            case 2:
+              display.innerHTML = "Notice the counter that was just added above.<br><br> That's will keep track of how many times you've clicked your mouse since you've been on this page.";
+              document.getElementById("3").disabled = false;
+              document.getElementById("2").disabled = true;
+              updateCounter();
+              document.body.addEventListener("click", updateCounter);
+              break;
+  
+            case 3:
+              alert('ALERT! \nSorry for startling you..\n..disregard this message!');
+              display.innerHTML = "Alerts are kind of annoying. But they definitely grab your attention.<br><br> Best not make a habit of using them too often. Keep going!";
+              document.getElementById("4").disabled = false;
+              document.getElementById("3").disabled = true;
+              break;
+          
+            case 4:
+              display.innerHTML = "Now, press any letter on your keyboard, and i'll guess which one you pressed.<br>P.S. - I'm never wrong! ";
+              addEventListener('keypress', (event) => {
+                
+                console.log(count);
+                if(count < 1) {
+                  count++;
+                  display.innerHTML = `You pressed...<b> ${event.key}</b>. Was I right? (Y/N)`;
+                }
+                else if(count < 2) {
+                  display.innerHTML = "";
+                  if(event.key === 'y' || event.key === 'Y') {
+                    display.innerHTML = "See, what'd I tell ya?? Open up the console to find out how I did it!";
+                  }
+                  else if(event.key === 'n' || event.key === 'N') {
+                    display.innerHTML = "Oh, now I know you're lying! Check the console to see how I know.";
+                  }
+                  else {display.innerHTML = "Check to console to see how it works."}
+                  title.innerHTML = 'Hope you learned a thing or two!';
+                  console.log("I added an event listener using the built in function 'addEventListener' that waits for you to press a key, and then stores which key you pressed. The game was rigged from the start!");                  
+                }
+
+              });
+              
+              document.getElementById("4").disabled = true;
+              
+
+              break;
+          }
+        }
+
+        
+    </script>
+</html>
