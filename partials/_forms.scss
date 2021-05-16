@@ -1,0 +1,108 @@
+/*********************  FORM  *************************/
+
+@media only screen and (min-width: 60em){
+    #genesis, #exodus {
+        display: inline-block;
+        margin-left: 125%;
+        background-color: #019ee9;
+        color: azure;
+        width: 8em;
+        font-weight: 700;
+        padding: .5em;
+        border-radius: 5px;
+        border: 1px solid azure;
+    }
+}
+
+#template-form {
+    padding: 1em;
+    border: 2px solid black;
+    width: fit-content;
+    margin: auto;
+    background-color: #111417;
+    color: azure;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 5px;
+}
+
+#gen-exo {
+    display: flex;
+    padding-left: 2em;
+    margin: auto;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+#genesis, #exodus {
+    display: inline-block;
+    margin-left: 5%;
+    background-color: #019ee9;
+    color: azure;
+    width: 8em;
+    font-weight: 700;
+    padding: .5em;
+    border-radius: 5px;
+    border: 1px solid azure;
+}
+
+#genesis:hover, #exodus:hover {
+    background-color: #f09d09;
+    border-color: #111417;
+}
+
+#template-form hr {
+    height: 1px;
+    width: 100%;
+    background-color: azure;
+}
+
+#text-boxes {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: #292f36;
+    margin: auto;
+    label {color:azure; text-shadow: black -1px -1px 2px;}
+    max-width: 100%;
+}
+
+#one-line, #many-lines {
+    background-color: azure;
+    border-radius: 5px;
+    border-color: azure;
+    color: black;
+    width: 100%;
+}
+
+#radio-nowhere, #checkmate {
+    background-color: #292f36;
+    display: inline-block;
+    width: fit-content;
+}
+
+#drop-down {
+    color: azure;
+    padding: 1px 8px;
+    border: 1px solid azure;
+    cursor: pointer;
+    user-select: none;
+    background-color: #019ee9;
+    border-radius: 5px;
+    display: inline-block;
+}
+#drop-down:active {
+    color: #111417;
+    background-color: azure;
+}
+
+abbr {
+    color: #f09d09;
+    font-weight: 300;
+}
+
+#boxes {
+    display: flex;
+    justify-content: center;
+}
+
