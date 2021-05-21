@@ -1,7 +1,7 @@
 /*********************  FORM  *************************/
 
 @media only screen and (min-width: 60em){
-    #genesis, #exodus {
+    #genesis, #exodus, .exodus {
         display: inline-block;
         margin-left: 125%;
         background-color: #019ee9;
@@ -33,7 +33,7 @@
     padding: 1em 0;
 }
 
-#genesis, #exodus {
+#genesis, #exodus, .exodus {
     display: inline-block;
     margin-left: 5%;
     background-color: #019ee9;
@@ -45,9 +45,10 @@
     border: 1px solid azure;
 }
 
-#genesis:hover, #exodus:hover {
+#genesis:hover, #exodus:hover, .exodus:hover {
     background-color: #f09d09;
     border-color: #111417;
+    cursor: pointer;
 }
 
 #template-form hr {

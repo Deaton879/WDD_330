@@ -3,10 +3,15 @@
 body {
     text-align: center;
     header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
         background-color: royalblue;
-        margin: auto;
-        padding: 1em;
-        border: ridge darkblue;
+        padding: .5em;
+        border-bottom: ridge darkblue;
+        
         h1 {
             color: whitesmoke;
             text-shadow: black 2px 2px 3px;
@@ -15,6 +20,9 @@ body {
     }
     
     main {
+        position: relative;
+        top: 8em;
+        margin-bottom: 10em;
         h2, h3 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -147,7 +155,7 @@ body {
     border-radius: 10px;
     .section__sub__header {
         font-family: Sansita;
-        margin-left: 3em;
+        margin: 0 5em 1em 1em;
         text-shadow: 0px -1px 1px  #111417;
         text-decoration-line: underline;
     }
@@ -193,13 +201,15 @@ body {
     .orange__code {
         color: orange;
     }
+    .red__code {
+        color: lightcoral;
+    }
 }
-.i1{
-    text-indent: 1.5em;
-}
-.i2 {
-    text-indent: 3em;
-}
+.i1{ text-indent: 1.5em; }
+.i2 { text-indent: 3rem; }
+.i3 { text-indent: 4.5rem; }
+.i4 { text-indent: 6rem; }
+
 #overlay {
     position: fixed;
     display: none;
@@ -214,4 +224,28 @@ body {
     cursor: pointer;
 }
 
+.slidingHeader {
+    visibility: collapse;
+}
+
+.console__output {
+    background-color: aliceblue;
+    border: 2px ridge black;
+    border-radius: 10px;
+    padding: 2em;
+    margin: auto;
+    margin-bottom: 1em;
+    width: 80%;
+}
+
+.dual__input {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    input {
+        border-radius: 5px; 
+        margin-right: 1em;
+    }
+}
 @import "../partials/forms";

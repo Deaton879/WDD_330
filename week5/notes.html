@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 01</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header id="stay"><h1>WDD 330 Portfolio</h1></header>
+        
+        <main>
+          
+          <!-- Overview Section: BEGIN -->
+
+          <section class="overview">
+            <h1 class="section__header">Week 05 Overview</h1>
+            <p class="content__p">
+              
+            </p><br>
+            <section class="sub__section">
+              <h2 class="section__sub__header">Table of Contents</h2>
+              <ul class="table__of__contents">
+                <li><a href="#tryCatch">Try/Catch Statements</a></li>
+                <li><a href="#alert">Makeshift Breakpoints</a></li>
+                <li><a href="#questions">Lingering Questions</a></li>
+              </ul>
+            </section>  
+            <br>
+          </section>
+          <!-- Overview Section: END -->
+
+          <hr class="section__divider">
+
+          <!-- Try/Catch Statement Section: BEGIN -->
+
+          <section class="content__section">
+            <h2 class="section__header" id="tryCatch">Handling Errors: Try/Catch Statements</h2>
+            <p class="content__p">
+                Below, we create our own <b class="emphasis" title="
+                Error objects:
+                are thrown when runtime errors occur. 
+                The Error object can also be used as a 
+                base object for user-defined exceptions. 
+                See below for standard built-in error types.
+                (MDN Web Docs)
+                ">Error class object</b> by extending JavaScript's built-in  
+                Error object class, and name it <b>MultiplicatorUnitFailure</b>. 
+            </p>
+            <p class="content__p">
+                Next we create a function, requiring 2 numbers to be passed 
+                in to be multiplied. We use 
+                <b class="emphasis" title="
+                The Math.random() function:
+                returns a floating-point, pseudo-random number in the 
+                range 0 to less than 1 (inclusive of 0, but not 1) 
+                with approximately uniform distribution over that 
+                range — which you can then scale to your desired range.
+                The implementation selects the initial seed to the random
+                number generation algorithm; it cannot be chosen or reset
+                by the user.
+                (MDN Web Docs)
+                ">Math.random()</b> which will randomly cause an error message to be thrown instead of
+                performing the multiplication. 
+            </p>
+            <div class="code__block">
+              <code>
+                <b class="blue__code">class</b><b class="orange__code"> MultiplicatorUnitFailure</b> <b class="blue__code">extends</b> Error {}<br><br>
+
+                <b class="blue__code">function </b><b class="orange__code">primitiveMultiply(a, b)</b> {
+                    <p class="indent i1"><b class="orange__code">if</b> (Math.random() < 0) {</p>
+                    <p class="indent i2"><b class="blue__code">return</b> a * b;</p>
+                    <p class="indent i1">} <b class="orange__code">else</b> {</p>
+                    <p class="indent i2"><b class="blue__code">throw new</b> MultiplicatorUnitFailure(<b class="red__code">"Klunk"</b>);</p>
+                    <p class="indent i1">}</p>
+                    }
+              </code>
+            </div>
+            
+            <p class="content__p">
+              Now, we define a function that uses a <b class="emphasis" title="
+              The try statement:
+              consists of a try-block, which contains one or 
+              more statements. {} must always be used, even 
+              for single statements. At least one catch-block, 
+              or a finally-block, must be present. 
+              (MDN Web Docs)
+              ">try block</b> to call the <b>primitiveMultiply()</b> function, which 
+              will either return the multiplied product of the 2 numbers passed, or
+              throw an error. The <b class="emphasis" title="
+              A catch-block:
+              contains statements that specify what to do if an 
+              exception is thrown in the try-block. If any 
+              statement within the try-block (or in a function 
+              called from within the try-block) throws an exception,
+              control is immediately shifted to the catch-block. 
+              If no exception is thrown in the try-block, the catch-block 
+              is skipped.
+              (MDN Web Docs)
+              ">catch block</b> defined in our new function will catch any thrown 
+              errors and deal with them.              
+            </p>
+            <p class="content__p">
+                In this case, we make sure that if any errors are thrown which are an 
+                <b class="emphasis" title="
+                The instanceof operator:
+                 tests to see if the prototype property of a 
+                 constructor appears anywhere in the prototype 
+                 chain of an object. The return value is a boolean 
+                 value.
+                 (MDN Web Docs) 
+                "> instanceof</b> 
+                our previously defined error class, <b>MultiplicatorUnitFailure</b>,
+                we start-over, calling the primitiveMultiply() function again.  
+            </p>
+            <p class="content__p">
+                By putting our try/catch block inside of an undefined 
+                <b class="emphasis">for-loop</b>, we can repeat this process until
+                the desired result (the product of our 2 numbers) is returned.
+            </p>
+            <div class="code__block">
+                <code>
+                    <b class="blue__code">function </b><b class="orange__code">reliableMultiply(a, b)</b> {
+                    <p class="indent i1"><b class="blue__code">for</b> (;;) {</p>
+                    <p class="indent i2"><b class="blue__code">try</b> {</p>
+                    <p class="indent i3"><b class="blue__code">return</b> primitiveMultiply(a, b);</p>
+                    <p class="indent i2">} <b class="blue__code">catch</b> (<b class="orange__code">e</b>) {</p>
+                    <p class="indent i3"><b class="blue__code">if</b> (<b class="red__code">!</b></b>(<b class="orange__code">e</b> 
+                    <b class="blue__code">instanceof</b> MultiplicatorUnitFailure))</p>
+                    <p class="indent i4"><b class="blue__code">throw</b> <b class="orange__code">e</b>;</p>
+                    <p class="indent i2">}</p>
+                    <p class="indent i1">}</p>
+                    }
+                </code>
+            </div>
+          </section>
+
+          <!-- Try/Catch Statement Section: END -->
+
+          <section class="content__section">
+            <h3 class="section__header">Example Code in Practice</h3>
+            <p class="content__p"> See the example code in action. 
+                Plug in 2 numbers to see the product.
+            </p>
+            <section class="sub__section">
+                <div class="console__output" id="myConsole">
+                    >_
+                </div>
+                <div class="dual__input">
+                    <input type="number" id="number1" placeholder="number 1">
+                    <input type="number" id="number2" placeholder="number 2">
+                    <button type="button" class="exodus" onclick="consoleLogOne()">Multiply</button>
+                </div>
+            </section>
+          </section>
+
+          <section class="content__section">
+            <h3 class="section__header">Tweak the code</h3>
+            <p class="content__p"> 
+                Now lets see what happens if we break the for loop each time the error is thrown.
+                Here's the updated code: 
+            </p>
+            <div class="code__block">
+                <code>
+                    <b class="blue__code">function </b><b class="orange__code">reliableMultiply(a, b)</b> {
+                    <p class="indent i1"><b class="blue__code">for</b> (;;) {</p>
+                    <p class="indent i2"><b class="blue__code">try</b> {</p>
+                    <p class="indent i3"><b class="blue__code">return</b> primitiveMultiply(a, b);</p>
+                    <p class="indent i2">} <b class="blue__code">catch</b> (<b class="orange__code">e</b>) {</p>
+                    <p class="indent i3"><b class="blue__code">if</b> ((<b class="orange__code">e</b> 
+                    <b class="blue__code">instanceof</b> MultiplicatorUnitFailure))</p>
+                    <p class="indent i4"><b class="blue__code">throw</b> <b class="orange__code">e</b>;</p>
+                    <p class="indent i2">}</p>
+                    <p class="indent i1">}</p>
+                    }
+                </code>
+            </div><br>
+            <section class="sub__section">
+                <div class="console__output" id="myConsoleTwo">
+                    >_
+                </div>
+                <div class="dual__input">
+                    <input type="number" id="number3" placeholder="number 1">
+                    <input type="number" id="number4" placeholder="number 2">
+                    <button type="button" class="exodus" onclick="consoleLogTwo()">Multiply</button>
+                </div>
+            </section>
+          </section>
+
+          <hr class="section__divider">
+          
+          <!-- Makeshift Breakpoints Section: BEGIN -->
+
+          <section class="content__section">
+            <h2 class="section__header" id="alert">Makeshift Breakpoints: Using the alert() Method for Debugging</h2>
+            <p class="content__p">
+              The <b class="emphasis" title="
+              The alert() method: 
+              in JavaScript is used to display a virtual alert box. 
+              It is mostly used to give a warning message to the users. 
+              It displays an alert dialog box that consists of some 
+              specified message (which is optional) and an OK button. 
+              When the dialog box pops up, we have to click 'OK' to proceed.">alert()</b> 
+              method is a good way to implement breakpoints within your code. By design, 
+              alert() stops all code from being executed until OK 
+              is clicked by the user. 
+            </p>
+            <p class="content__p">
+                Now, lets see how that works by setting alert breakpoints throughout our example code.
+            </p>
+            <section class="sub__section">
+
+                <div class="dual__input">
+                    <input type="number" id="number5" placeholder="number 1">
+                    <input type="number" id="number6" placeholder="number 2">
+                    <button type="button" class="exodus" onclick="alertInstead()">Multiply</button>
+                </div>
+            </section>
+            
+            
+          </section>
+         
+          <!-- Makeshift Breakpoints Section: END -->
+
+          <hr class="section__divider">
+
+          <!-- Questions Section: BEGIN -->
+          <section class="content__section">
+            <h2 class="section__header">Lingering Questions:</h2>
+            <p class="content__p" id="questions">Is there a way to access the console log and display that content directly to the page? <br>For instance, to
+                reference information logged there?</p>
+          </section>
+
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREV PAGE</a>   
+    </footer>
+
+    <script>
+
+        // Function to handle the header as user scrolls down the page
+        window.onscroll = function() {goAway()};
+        function goAway() {
+
+            let h = document.getElementById('stay');
+            if(document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                h.setAttribute('class', 'slidingHeader');
+            }
+            else {
+                h.setAttribute('class', '');
+            }
+        }
+
+
+        // Code to handle the example code
+        class MultiplicatorUnitFailure extends Error {}
+
+
+        function primitiveMultiply(a, b) {
+            if (Math.random() < 0.5) {
+                return a * b;
+            } else {
+                
+                throw new MultiplicatorUnitFailure("Klunk");
+            }
+        }
+
+        function reliableMultiplyOne(a, b) {
+            for (;;) {
+                try {
+                    return primitiveMultiply(a, b);
+                } catch (e) {
+                    if (!(e instanceof MultiplicatorUnitFailure)) {    
+                        throw(e);
+                    }
+
+                        
+                }
+            }
+        }
+
+        function reliableMultiplyTwo(a, b) {
+            for (;;) {
+                try {
+                    return primitiveMultiply(a, b);
+                } catch (e) {
+                    if ((e instanceof MultiplicatorUnitFailure)) {    
+                        console.log(e);
+                        return "Error: Klunk "+  "<br> > Try Again!";
+                    }
+
+                        
+                }
+            }
+        }
+
+        function primitiveMultiplyTwo(a, b) {
+            if (Math.random() < 0.5) {
+                alert("primitiveMultiply() has resolved");
+                return a * b;
+            } else {  
+                alert("primitiveMultiply() has thrown an error");
+                throw new MultiplicatorUnitFailure("Klunk");
+            }
+        }
+
+        function reliableMultiplyThree(a, b) {
+            for (;;) {
+                try {
+                    return alert("reliableMultiply() has successfully tried calling primitiveMultiply()"), 
+                           primitiveMultiplyTwo(a, b);
+                } catch (e) {
+                    if ((e instanceof MultiplicatorUnitFailure)) {    
+                        console.log(e);  
+                        alert("reliableMultiply() has caught the error thrown by primitiveMultiply() ");
+                    }
+
+                        
+                }
+            }
+        }
+        
+        let myConsole = document.getElementById('myConsole');
+        let myTweakedConsole = document.getElementById('myConsoleTwo');
+
+        function consoleLogOne() {
+            let n1 = document.getElementById('number1').value;
+            let n2 = document.getElementById('number2').value;
+            let product = reliableMultiplyOne(n1, n2);
+            myConsole.innerHTML = "> " + product;     
+        }
+
+        function consoleLogTwo() {
+            let n3 = document.getElementById('number3').value;
+            let n4 = document.getElementById('number4').value;
+            let product2 = reliableMultiplyTwo(n3, n4);
+            myTweakedConsole.innerHTML = "> " + product2;
+        }
+
+        function alertInstead() {
+            let n5 = document.getElementById('number5').value;
+            let n6 = document.getElementById('number6').value;
+            let product3 = reliableMultiplyThree(n5, n6);
+            alert("The product of " + n5 + " and " + n6 + " is " + product3);
+            alert("If you did not encounter an error, keep trying to see what happens when you do.");
+        }
+    </script>
+
+</html>
