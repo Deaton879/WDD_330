@@ -1,0 +1,14 @@
+.app-info {
+    display: flex;
+    flex-direction: row;
+    border: 1px black ridge;
+    padding: .5rem;
+    justify-content: space-evenly;
+    
+    p { 
+        margin: .5em; 
+        padding: 10px; 
+    }
+    
+}
+@import "../partials/task-filters";

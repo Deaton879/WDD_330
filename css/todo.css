@@ -1,0 +1,153 @@
+html {
+  height: 100%;
+}
+
+html body {
+  height: inherit;
+}
+
+.app__container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+@media only screen and (min-width: 900px) {
+  .app__container {
+    width: 40%;
+  }
+}
+
+footer {
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer #add-task__container {
+  width: 40%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  footer #add-task__container {
+    width: 95%;
+    margin: 0px 0px 0px -6px;
+  }
+}
+
+footer #add-task__container .checkbox {
+  color: #141313;
+}
+
+footer #add-task__container .checkbox:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+footer #add-task {
+  width: -webkit-fill-available;
+}
+
+.task-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px black ridge;
+  padding: .5rem;
+}
+
+.task-box .checkbox {
+  border: none;
+  font-weight: 900;
+  font-size: 2rem;
+  border: 2px #141313 ridge;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.task-box .delete {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.task-box .delete:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.task-box .checkbox:hover {
+  background-color: #141313;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.task-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.proxy {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 1px black ridge;
+  padding: .5rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.app-info p {
+  margin: .5em;
+  padding: 10px;
+}
+
+#task-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: .5em;
+}
+
+#task-filters .filter {
+  text-decoration: none;
+  /* margin: .5em; */
+  padding: .5em;
+  margin: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#task-filters .active-filter {
+  border: 1px black dashed;
+}
+/*# sourceMappingURL=todo.css.map */

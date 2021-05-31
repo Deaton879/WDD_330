@@ -1,0 +1,47 @@
+@import '../partials/colors';
+
+html {
+    height: 100%;
+    body {
+        height: inherit;
+    }
+}
+.app__container {
+    @media only screen and(min-width: 900px) {
+        width: 40%;
+    }
+
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+footer {
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    #add-task__container {
+       
+        width: 40%;
+        margin: auto;
+        @media only screen and (max-width: 900px) {
+            width: 95%;
+            margin: 0px 0px 0px -6px;
+        }
+        .checkbox {
+            color: $btn;
+        }
+        .checkbox:hover {
+            color: $app-color;
+        }
+    }
+
+    #add-task {
+        width: -webkit-fill-available;
+    }
+}
+@import "../partials/task-list";
+@import "../partials/app-info";

@@ -1,0 +1,42 @@
+.task-box {
+    display: flex;
+    justify-content: space-between;
+    border: 1px black ridge;
+    padding: .5rem;
+
+    .checkbox {
+        border: none;
+        font-weight: 900;
+        font-size: 2rem;        
+        border: 2px $btn ridge;
+        color: $app-color;
+        background-color: $app-color;
+    }
+
+    .delete {
+        border: none;
+        background-color: $app-color;
+        font-weight: 900;
+        font-size: 2rem;
+    }
+
+    .delete:hover {
+        cursor: pointer;
+        color: $cancel;
+    }
+    
+    .checkbox:hover {
+        background-color: $btn;
+        cursor: pointer;
+        color: $app-color
+    }
+
+}
+
+.task-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.proxy {
+    justify-content: center;
+}

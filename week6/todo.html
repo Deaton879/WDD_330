@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Web Application</title>
+    <link href="../css/todo.css" type="text/css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <!-- App container -->
+    <div class="app__container">
+        <!-- Header to hold the app title -->
+        <header>
+            <h1>To-Do's</h1>
+        </header>
+        <!-- Container to hold tasks. Starter task by default to make more tasks. -->
+        <div id="task-list" class=""> 
+        </div>  
+        <!-- app info and filters -->
+        <div class="app-info">
+            <p><b id="remaining-tasks"></b> tasks left</p>
+            <span id="task-filters">
+                <a id="all" href="#" class="active-filter filter" onclick="activeFilter(this.id)">All.</a>
+                <a id="active" href="#" class="filter" onclick="activeFilter(this.id)">Active.</a>
+                <a id="completed" href="#" class="filter" onclick="activeFilter(this.id)">Completed</a>
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <div id="add-task__container" class="task-box">
+            <input type="text" id="add-task" required><button type="button" onclick="checkInput()" class="checkbox">&#10010;</button>
+        </div>
+    </footer>
+    <script src="../js/utilities.js"></script>
+    <script src="../js/ls.js"></script>
+    <script src="../js/todo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+#task-filters {
+    display: flex;
+    flex-direction: row;
+    padding: .5em;
+
+    .filter {
+        text-decoration: none;
+        /* margin: .5em; */
+        padding: .5em;
+        margin: auto;
+        height: fit-content;
+    }
+    
+    .active-filter {
+        border: 1px black dashed; 
+    }
+}
