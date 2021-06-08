@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 07</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header id="stay"><h1>WDD 330 Portfolio</h1></header>
+        
+        <main> 
+             <!-- Overview Section: BEGIN -->
+
+          <section class="overview">
+            <h1 class="section__header">Week 07 Overview</h1>
+            <p class="content__p">
+              
+            </p><br>
+            <section class="sub__section">
+              <h2 class="section__sub__header">Table of Contents</h2>
+              <ul class="table__of__contents">
+                <li><a href="#funct">Function Properties</a></li>
+                <li><a href="#async">Async Programming</a></li>
+              </ul>
+            </section>  
+            <br>
+          </section>
+          <!-- Overview Section: END -->
+
+          <hr class="section__divider" id="funct">
+
+          <!-- functions Section: BEGIN -->
+
+            <section class="content__section">
+                <h2 class="section__header" >Functions: First-Class Objects</h2><br>
+                <h3 class="section__header">Overview</h3>
+                <p class="content__p">
+                    Functions in JavaScript are considered first-class objects.<br><br> This means:<br><br>
+                    > Functions can have their own properties and methods<br><br>
+                    > Functions can be passed around like other values<br><br>
+                    > Functions can accepts other functions as parameters & be returned by other functions<br><br>
+                </p>
+                <h3 class="section__header">Call and Apply Methods</h3>
+                <p class="content__p">
+                    <b class="emphasis" title="
+                    The call() method can be used to set the value 
+                    of this inside a function to an object that is 
+                    provided as the first argument.">The call method</b> is an interesting way to reference the key value pair 
+                    in another object. For instance: 
+                </p>
+                <div class="code__block">
+                    <code>      
+                      <b class="blue__code">function </b><b class="yellow__code">sayHello()</b> {
+
+                            <p class="indent i1"><b class="pink__code">return</b> <b class="orange__code">`Hello, my name is </b>
+                                <b class="blue__code">${ this</b>
+                                <b class="green__code">.name</b>
+                                <b class="blue__code">}`</b>;
+                            </p>
+                        }
+                    </code>
+                </div>
+                <p class="content__p">And lets say we have a couple of names established..</p>
+                <div class="code__block">
+                    <code>      
+
+                        <p class="indent1">
+                            <b class="blue__code">const</b> <b class="lb__code">dallas</b> = { 
+                            <b class="lb__code">name: </b> 
+                            <b class="orange__code">'Dallas'</b>};
+                        </p>
+                        <p class="indent1">
+                            <b class="blue__code">const</b> <b class="lb__code">notDallas</b> = { 
+                            <b class="lb__code">name: </b> 
+                            <b class="orange__code">'not Dallas'</b>};
+                        </p>
+                        
+                    </code>
+                </div>
+            
+                <p class="content__p">And lets say we have a couple of names established..</p>
+                <div class="code__block">
+                <code>      
+
+                    <p class="indent1">
+                        <b class="blue__code">const</b> <b class="lb__code">dallas</b> = { 
+                        <b class="lb__code">name: </b> 
+                        <b class="orange__code">'Dallas'</b>};
+                    </p>
+                    <p class="indent1">
+                        <b class="blue__code">const</b> <b class="lb__code">notDallas</b> = { 
+                        <b class="lb__code">name: </b> 
+                        <b class="orange__code">'not Dallas'</b>};
+                    </p>
+                    
+                </code>
+                </div>
+
+                <p class="content__p">Next, check the console to see the call() method in action</p>
+                <p class="buttonBoard">
+                    <button class="btn" onclick="console.log('Hello, my name is Dallas')">sayHello.call(dallas);</button><br><br>
+                    <button class="btn" onclick="console.log('Hello, my name is not Dallas')">sayHello.call(notDallas);</button>
+                </p>
+            </section>
+
+            <!-- functions Section: End -->
+
+            <hr class="section__divider" id="async">
+
+            <!-- Async Section: BEGIN -->
+
+            <section class="content__section">
+                <h2 class="section__header" >Asynchronous Programming - AJAX</h2><br>
+                <p class="content__p">
+                    AJAX, which stands for: <br><br>
+                    <b class="emphasis" title="
+                    When a request for data is sent, the program doesn’t have to
+                    stop and wait for the response. It can carry on running,
+                    waiting for an event to fire when a response is received. By
+                    using callbacks to manage this, programs are able to run in an
+                    efficient way, avoiding lag as data is transferred back and
+                    forth.
+                    ">Asynchronous</b><br><br>
+                    <b class="emphasis" title="
+                    JavaScript was always considered a front-end language, not
+                    used to communicate with the server. Ajax enabled JavaScript
+                    to send requests and receive responses from a server, allowing
+                    content to be updated in real time.
+                    ">JavaScript</b><br><br>
+                    <b class="emphasis" title="
+                    When the term Ajax was originally coined, XML documents
+                    were often used to return data. Many different types of data
+                    can be sent, but by far the most commonly used in Ajax
+                    nowadays is JSON, which is more lightweight and easier to
+                    parse than XML. (Although it has never really taken off, the
+                    termAjaj is sometimes used to describe the technique.) JSON
+                    also has the advantage of being natively supported in
+                    JavaScript, so you can deal with JavaScript objects rather than
+                    having to parse XML files using DOM methods.">XML</b>
+                </p><br>
+
+                <h3 class="section__header ">Summary:</h3>
+                <ul>
+                    <li>Ajax is a technique for sending and receiving data asynchronously in the
+                        background.</li>
+                    <li>The data can be sent in many forms, but it is usually in JSON.</li>
+                    <li>Ajax can be used for making partial page updates without having to do a full
+                        page reload.</li>
+                    <li>Ajax can be used for communicating with external APIs.</li>
+                    <li>Ajax requests can be made using the Fetch API.</li>
+                    <li>The Response interface allows you to control the response received from a
+                        request or to create your own response objects.</li>
+                    <li>The Request interface allows you to create a request object that contains
+                        information about the request being made, such as the URL and headers.</li>
+                    <li>The Headers interface allows you to create HTTP headers that can be added to
+                        a request or response object.</li>
+                    <li>Requests can retrieve data using a GET request, or send data using a POST
+                        request.</li>
+                    <li>The FormData interface makes it easier to send data from forms.</li>
+
+                </ul>
+            </section>
+
+            <!-- Async Section: END -->
+
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREV PAGE</a>   
+    </footer>
+
+    <script>
+        
+
+        
+    </script>
+
+</html>

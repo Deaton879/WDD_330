@@ -210,12 +210,16 @@ body footer {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
   padding: 1em;
-  color: gray;
+  color: lightgray;
   background: #111417;
   border-radius: 10px;
 }
 
 .code__block .blue__code {
+  color: lightskyblue;
+}
+
+.code__block .lb__code {
   color: lightblue;
 }
 
@@ -225,6 +229,18 @@ body footer {
 
 .code__block .red__code {
   color: lightcoral;
+}
+
+.code__block .green__code {
+  color: lightgreen;
+}
+
+.code__block .yellow__code {
+  color: lightgoldenrodyellow;
+}
+
+.code__block .pink__code {
+  color: pink;
 }
 
 .i1 {

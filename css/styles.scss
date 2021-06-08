@@ -192,17 +192,29 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     padding: 1em;
-    color: gray;
+    color: lightgray;
     background: #111417;
     border-radius: 10px;
     .blue__code {
-        color:lightblue;
+        color:lightskyblue;
+    }
+    .lb__code {
+        color: lightblue;
     }
     .orange__code {
         color: orange;
     }
     .red__code {
         color: lightcoral;
+    }
+    .green__code {
+        color: lightgreen;
+    }
+    .yellow__code {
+        color: lightgoldenrodyellow;
+    }
+    .pink__code {
+        color: pink;
     }
 }
 .i1{ text-indent: 1.5em; }
