@@ -432,4 +432,38 @@ abbr {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.myCanvas {
+  border: dotted 2px black;
+}
+
+.example {
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.example .caption {
+  text-align: end;
+  font-weight: bolder;
+  border-right: blueviolet 2px dashed;
+  padding-right: 15px;
+}
+
+.example img {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+}
+
+.example canvas {
+  margin-right: 15px;
+  margin-left: 15px;
+}
 /*# sourceMappingURL=styles.css.map */

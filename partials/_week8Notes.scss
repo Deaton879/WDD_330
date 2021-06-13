@@ -1,0 +1,24 @@
+.myCanvas {
+    border: dotted 2px black;
+}
+.example {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    
+    .caption {
+        text-align: end;
+        font-weight: bolder;
+        border-right: blueviolet 2px dashed;
+        padding-right: 15px;
+    }
+    img {
+        display: inline-flex;
+        width: 100%;
+    }
+    canvas {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}  

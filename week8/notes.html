@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 08</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header id="stay"><h1>WDD 330 Portfolio</h1></header>
+        
+        <main> 
+
+            <h2 class="section__header">Using Canvas to draw shapes</h2><br>
+            <div class="example">
+                <p class="caption content__p">
+                    This is a canvas element, and it can be used to draw things
+                    in the browser.
+                </p>
+                <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                    <!-- Will appear only if browser does not support Canvas -->
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+            </div><br>
+
+            <div class="example">
+                <p class="caption content__p">
+                    Now we will draw a circle in our Canvas
+                </p>
+                <canvas id="myCanvas2" class="myCanvas" width="200" height="200">
+                    <!-- Will appear only if browser does not support Canvas -->
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+            </div><br>
+            
+            <div class="example">
+                <p class="caption content__p">
+                    We can even do things like gradients
+                </p>
+                <canvas id="myCanvas3" class="myCanvas" width="200" height="200">
+                    <!-- Will appear only if browser does not support Canvas -->
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+            </div>
+            <br>
+
+            <hr class="section__divider">
+
+            <br>
+            <div class="example">
+                <p class="caption content__p">This is how the Canvas coordinate system works:</p>
+                <img class="example-img" src="../img/canvas_coordinate_system.png" alt="Canvas Coordinate System reference">
+            </div>
+            <br>
+
+            <hr class="section__divider">
+
+            <h2 class="section__header">Now lets use a pattern instead</h2><br>
+            <div class="example">
+                <p class="content__p caption">For more info, check the canvas.js file for this project</p>
+                <canvas id="myCanvas4" class="myCanvas" width="200" height="200">
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+                <button class="btn" onclick="drawPattern()">Fill<br>Rectangle!</button><br>
+            </div><br>
+
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREV PAGE</a>   
+    </footer>
+
+    <script src="../js/week8/canvas.js"></script>
+
+</html>
