@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+    <title>Tester Window Page</title>
+    <style>
+        .countdown {
+            font-size: xx-large;
+            font-family: monospace;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="content__section">
+            <h2 class="section__header" >Test out some window object commands</h2><br>
+            <p class="content__p" id="tester__P">
+                Let' start by relocating this window...</p>
+                <br>
+                <br>
+            <div id="button-holder">
+                <button onclick="move()" class="goBack" id="move">Move the Window</button>
+            </div>
+                
+                <br><br>
+        </section>
+    </main>
+    <script>
+        let buttonHolder = document.getElementById('button-holder');
+        let count = 10;
+        window.moveTo(0,0);
+        
+        function move() { 
+            window.moveTo(300,300); 
+            resetButton();
+            document.getElementById('move').innerHTML = "Move again!";
+            document.getElementById('move').onclick = function() { 
+                window.moveTo(500,100);
+                resetButton();
+                document.getElementById('tester__P').innerHTML = "Now lets resize the window...";
+                document.getElementById('move').innerHTML = "Resize!"; 
+                document.getElementById('move').onclick = function() { 
+                    window.resizeTo(1000,1000);
+                    deleteButton();
+                    document.getElementById('tester__P').innerHTML = "Nice Work! Lets head on back...COUNTDOWN INITIATED";
+                    
+                    setTimeout(() => {
+                       window.close()
+                    }, 12000);
+
+                    setInterval(() => {
+                        countdown();
+                    }, 1000);
+                    
+                }
+            };
+        }
+
+        function resetButton() {
+            buttonHolder.innerHTML = `<button class="goBack" id="move">Move the Window</button>`;
+        }
+        function deleteButton() {
+            buttonHolder.innerHTML = "";
+        }
+        function countdown() {
+            if(count < 1) {
+                buttonHolder.innerHTML = `<p class="countdown">Goodbye!</p>`; 
+                return;
+            }
+            buttonHolder.innerHTML = `<p class="countdown">${count}</p>`; 
+            count --;
+        }
+
+    </script>
+</body>
+</html>

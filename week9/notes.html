@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 09</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header id="stay"><h1>WDD 330 Portfolio</h1></header>
+        
+        <main> 
+            <!-- Overview Section: BEGIN -->
+            <hr class="section__divider" >
+            <section class="overview">
+                <h1 class="section__header">Week 09 Overview</h1>
+                <p class="content__p">
+                
+                </p><br>
+                <section class="sub__section">
+                <h2 class="section__sub__header">Table of Contents</h2>
+                <ul class="table__of__contents">
+                    <li><a href="#API">API's and the Window Object</a></li>
+                </ul>
+                </section>  
+                <br>
+            </section>
+            <!-- Overview Section: END -->
+
+            <hr class="section__divider">
+
+            <section class="content__section">
+                <h2 class="section__header" >API's and the Window Object</h2><br>
+                <p class="content__p">
+                    Check out what you can do with the window object! <br>
+                    <br>
+                    <button onclick="openTester()" class="goBack">Start Here</button>
+                    <br><br>
+                    
+                    
+                    Press the button below to open up Quiz Ninja:
+                    A web app that uses an API for a bit of trivia fun!
+                </p><br>
+                <button onclick="popup()" class="goBack" id="API">Go to Quiz Ninja</button>
+            </section>
+            
+        </main>
+        <script src='../js/week9/quiz.js'></script>
+        <script>
+            function openTester() { window.open('./tester.html', 'Tester Window Object', 'width=400,height=400,resizable=yes'); }
+            function popup() { window.open('./quiz.html','Quiz Ninja','width=800,height=800,resizable=yes'); }
+        </script>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREV PAGE</a>   
+    </footer>
+
+</html>

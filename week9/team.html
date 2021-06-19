@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="../css/team9styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
+
+    <audio data-key="65" src="../sounds/clap.wav"></audio>
+    <audio data-key="83" src="../sounds/hihat.wav"></audio>
+    <audio data-key="68" src="../sounds/kick.wav"></audio>
+    <audio data-key="70" src="../sounds/openhat.wav"></audio>
+    <audio data-key="71" src="../sounds/boom.wav"></audio>
+    <audio data-key="72" src="../sounds/ride.wav"></audio>
+    <audio data-key="74" src="../sounds/snare.wav"></audio>
+    <audio data-key="75" src="../sounds/tom.wav"></audio>
+    <audio data-key="76" src="../sounds/tink.wav"></audio>
+    
+    <script>
+        
+      // Create an array of buttons and audio files to cross-reference
+      const buttons = document.getElementsByClassName('key');
+      const audio = document.querySelectorAll('audio'); 
+      const size = buttons.length;
+
+      // Create an array to pair each data-key with a count variable
+      let tracker = [];
+
+      // Track how many time each button has been pressed with that data
+      audio.forEach(file => {
+        let key = file.attributes[0].value;
+        tracker.push( {key: key, count: 1});
+      });
+
+
+      // Set every button with an onlick event that calls the play() method
+      for(let x = 0; x < size; x++) {
+        buttons[x].setAttribute("onclick", "play(this.attributes[0].value)");
+      }
+
+
+      /* THE PLAY() METHOD:
+          Handle matching the button pressed to the correct audio file
+          update the count tracking array
+          handle the button animations and play the audio file
+      */
+      function play(dk) {
+
+        // run through all the audio files
+        for(let x = 0; x < size; x++) {
+          
+          let track = audio[x];
+      
+          // If the data-key from button matches the audio file.. 
+          if(track.attributes[0].value === dk) {
+
+            // Keep track of button presses; reset count on 10 
+            if (tracker[x].count < 10) {
+              tracker[x].count ++;
+            } else {
+              tracker[x].count = 1;
+            }
+
+            // Move the button down count * 10px each time it is pressed;        
+            let value = tracker[x].count * 10;
+            let margin = "margin-top: " + value + "px";
+            buttons[x].style =  margin;
+
+
+            // Set the class of the button to playing
+            buttons[x].classList.add("playing");
+
+            // If paused, play track
+            if (track.paused) {
+              track.play();
+            }
+            // Otherwise, interrupt, and restart track from beginning onclick
+            else{  
+              track.currentTime = 0; 
+            }
+
+            // Set the window timeout period based on how long the track is
+            let timeout = Math.floor(track.duration * 1000);
+            setTimeout(() => {
+                // Remove playing class once track is complete
+                buttons[x].classList.remove("playing");
+              }, timeout);
+          }
+        }
+      }
+      
+      // Find the correct key-code based on the button pressed, and pass that into the play() method
+      function findButton(e) {
+        let key = `${e.keyCode}`;
+        play(key);
+      }
+
+      // Event listener for key presses
+      window.addEventListener('keydown', findButton);
+
+    </script>
+
+  </body>
+  <footer>
+    <span>Dallas Eaton</span><br>
+    <span>WDD 330 - Web Frontend Development II</span><br>
+    <span>BYU-Idaho - Spring 2021</span><br>
+    <a href="./index.html" class="goBack">PREV PAGE</a>   
+  </footer>
+</html>
