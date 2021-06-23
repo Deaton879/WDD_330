@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/proposal.css" type="text/css" rel="stylesheet" media="screen">
+    <title>Document</title>
+</head>
+<body>
+    <header class="proposal-header" id="top">
+        <h1>Block 2 Project Proposal: Quote Collector Web App</h1>
+    </header>
+
+    <div class="container">
+        <section id="purpose">
+            <h2>Purpose</h2>
+            <p>
+                The purpose of this web app is to offer a utility 
+                which will allow you to save your favorite quotes, 
+                and keep them organized all in one place. The app will 
+                also provide the ability to discover new quotes, and 
+                even share turn those quotes into post to share
+                on social media.
+            </p>
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#procedure">Procedure</a></li>
+                <li><a href="#color-palette">Colors</a></li>
+                <li><a href="#fonts">Fonts</a></li>
+                <li><a href="#wires">Wireframes</a></li>
+            </ul>
+        </section>
+    </div>
+        <hr>
+    <div class="container">
+        <section id="procedure">
+            <h2>Procedure</h2>
+            <p>
+                The homepage will show a "quote of the day", which will change
+                each day, and will be accessed using the rest-api: 
+                <a href="https://github.com/lukePeavey/quotable">Quotable</a>.<br>
+                There will also be an option to save the quote of the day to a list of 
+                "favorite" quotes.
+            </p>
+            <p>
+                There will be another page where the user can search for random quotes, 
+                search for quotes using search tags (i.e. author, subject, etc.)
+            </p>
+            <p>
+                The user will be able to manually enter quotes using
+                a form which will collect the following information from the user: 
+            </p>
+            <ol>
+                <li>the quote (required)</li>
+                <li>the author (required)</li>
+                <li>the source (optional)</li>
+            </ol>
+            <p>
+                The quote will be saved to the user's favorites list.
+            </p>
+            <p>
+                Finally, the favorites page will allow the user to remove quotes from their list,
+                and will also provide the ability to share any of those quotes on the social media
+                platform of their choosing. This will create a post for the user, and allow them 
+                to tailor certain aesthetic aspects of their post before sending (font style, background, etc.) 
+            </p>
+            <p>The user's favorites list will be saved using local storage.</p>
+        </section>
+    </div>
+        <hr>
+    <div class="container">
+        <section id="color-palette">
+            <h2>Color Palette</h2>
+            <div class="img"><img src="../img/project_color_palette.png"></div>
+        </section>
+    </div>
+        <hr>
+    <div class="container">
+        <section id="fonts">
+            <h2>Fonts</h2>
+            <div class="font">
+                <section class="font-template"><h4 class="font-role">Heading Font: </h4><p id="f1">Philosopher</p></section>
+                <br><section class="font-template"><h4 class="font-role">Body Font: </h4><p id="f2">Roboto</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 1: </h4><p id="f3">Libre Barcode 128 Text</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 2: </h4><p id="f4">Indie Flower</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 3: </h4><p id="f5">Dancing Script</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 4: </h4><p id="f6">Kirang Haerang</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 5: </h4><p id="f7">Inconsolata</p></section>
+                <br><section class="font-template"><h4 class="font-role">Variable Font 6: </h4><p id="f8">Viaoda Libre</p></section>
+            </div>
+        </section>
+    </div>
+        <hr>
+    <div class="container">
+        <section id="wires">
+            <h2>Wireframes</h2>
+            <div class="wireframes">
+                <section class="img">
+                    <h4>Landing Page</h4>
+                    <img src="../img/wire_landing.PNG">
+                </section>
+                <section class="img">
+                    <h4>Random Page</h4>
+                    <img src="../img/wire_random.PNG">
+                </section>
+                <section class="img">
+                    <h4>Search Page</h4>
+                    <img src="../img/wire_search.PNG">
+                </section>
+                <section class="img">
+                    <h4>Add Page</h4>
+                    <img src="../img/wire_add.PNG">
+                </section>
+                <section class="img">
+                    <h4>Favorite Page</h4>
+                    <img src="../img/wire_favorites.PNG">
+                </section>
+            </div>
+        </section>
+    </div>
+        <hr>
+    <footer>
+        <a href="#top" class="scroll-button">Back to Top</a>
+    </footer>
+
+</body>
+</html>
