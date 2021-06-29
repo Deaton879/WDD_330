@@ -260,5 +260,18 @@ body {
         margin-right: 1em;
     }
 }
+
+.fancy {
+    margin: 1em auto;
+    font-family:cursive;
+    padding: 1em;
+    width: 60%;
+    border-radius: 10px;
+    border: 2px dotted darkorange;
+    background-color: blanchedalmond;
+    color: chocolate;
+    text-shadow: 1px 1px 1px snow;
+}
+
 @import "../partials/forms";
 @import "../partials/week8Notes";

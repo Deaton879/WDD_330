@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>WDD 330 - Week 10</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+
+        <header id="stay"><h1>WDD 330 Portfolio</h1></header>
+        
+        <main> 
+               <!-- Overview Section: BEGIN -->
+
+          <section class="overview">
+            <h1 class="section__header">Week 10 Overview</h1>
+            <p class="content__p">
+              
+            </p><br>
+            <section class="sub__section">
+              <h2 class="section__sub__header">Table of Contents</h2>
+              <ul class="table__of__contents">
+                <li><a href="#fetch">Using Fetch()</a></li>
+              </ul>
+            </section>  
+            <br>
+          </section>
+          <!-- Overview Section: END -->
+
+          <hr class="section__divider">
+
+          <section class="content__section">
+              <h2 class="section__header" id="fetch">API using Fetch()</h2><br>
+              <p class="content__p">
+                Press the button below to fetch a random quote from
+                <a href="https://github.com/lukePeavey/quotable">Quotable</a>
+                , a random quotes API.<br><br>
+                Open up the console to see the JSON object returned by 
+                our fetch call. 
+              </p>
+              <button onclick="fetchRandom()" class="goBack">Get Random Quote</button>
+              <p class="content__p">
+                Now press the "Display Quote" button to display the quote, without 
+                reloading the web page.
+              </p>
+              <button onclick="displayRandom()" class="goBack">Display Quote</button>
+              <div id="quote"></div>
+              <p class="content__p">
+                Try getting another random quote, and then displaying it with
+                those buttons a few more times.
+              </p>
+          </section>
+        </main>
+    </body>
+    <footer>
+        <span>Dallas Eaton</span><br>
+        <span>WDD 330 - Web Frontend Development II</span><br>
+        <span>BYU-Idaho - Spring 2021</span><br>
+        <a href="./index.html" class="goBack">PREV PAGE</a>   
+    </footer>
+
+    <script src="../js/week10/notes-client.js"></script>
+
+</html>
