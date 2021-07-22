@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Quote of the Day</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles.b0cbc6ce.css">
+<script src="/styles.b0cbc6ce.js"></script></head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/views\random.html">Random</a>
+    <a href="/views\search.html">Search</a>
+    <a href="/views\add.html">Add</a>
+    <a href="/views\favorites.html">Favorites</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <main>
+    <header>
+      <h1>Quote of the Day:</h1>
+    </header>
+    <div id="qotd">
+      
+    </div>
+    <div id="options">
+      <button onclick="saveQuote()" class="btn" id="saveButton">Save</button>
+    </div>
+  </main>
+
+  <script src="/js.00a46daa.js"></script>
+  <script>function myFunction() {
+  var x = document.getElementById("myTopnav");
+
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} // Save to favorites list
+
+
+function saveQuote() {
+  var favorites = JSON.parse(localStorage.getItem("favorites"));
+  var newFav = {
+    content: localStorage.getItem('content'),
+    author: localStorage.getItem('author')
+  };
+
+  if (favorites.length > 0) {
+    var gate = favorites.every(function (quote) {
+      if (quote.author === newFav.author || quote.content === newFav.content) {
+        return false;
+      }
+
+      return true;
+    });
+
+    if (gate === true) {
+      favorites.push(newFav);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    } else {
+      console.log('Quote already on favorites list');
+    }
+  } else {
+    favorites.push(newFav);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  } //console.log(favorites)
+
+}</script>
+</body>
+
+</html>

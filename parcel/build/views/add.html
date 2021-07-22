@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Add Quote</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles.b0cbc6ce.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/index.html">Home</a>
+    <a href="/views\random.html">Random</a>
+    <a href="/views\search.html">Search</a>
+    <a href="/views\add.html" class="active">Add</a>
+    <a href="/views\favorites.html">Favorites</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <main>
+    <div class="container">
+        <header>
+            <h1>Add a Quote</h1>
+            <p>Add a new quote of your own, and save it to your favorites list.</p>
+        </header>
+        <form action="/action_page.php">       
+            <div class="row">
+              <div class="col-25">
+                <label for="quote">Quote</label>
+              </div>
+              <div class="col-75">
+                <textarea id="quote" name="quote" placeholder="Write your quote here.." style="height:200px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                  <label for="author">Author</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="author" name="author" placeholder="Author name...">
+                </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+  </main>
+
+  <script src="/random.424da3ff.js"></script>
+  <script>function myFunction() {
+  var x = document.getElementById("myTopnav");
+
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}</script>
+</body>
+
+</html>
