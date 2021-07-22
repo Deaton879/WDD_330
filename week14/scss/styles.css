@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inconsolata:wght@900&family=Indie+Flower&family=Kirang+Haerang&family=Libre+Barcode+128+Text&family=Philosopher:wght@700&family=Roboto&family=Viaoda+Libre&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #F2E9E4;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Philosopher", sans-serif;
+}
+
+body main {
+  margin: 10rem auto;
+  width: 50%;
+}
+
+body main #qotd, body main #random-quote, body main #favContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  padding: 0 1rem;
+  border: 1px dashed #4A4E69;
+  border-radius: 1rem;
+  width: 90%;
+  background-color: whitesmoke;
+}
+
+body main #qotd #content, body main #qotd .content, body main #random-quote #content, body main #random-quote .content, body main #favContainer #content, body main #favContainer .content {
+  text-indent: 1.5rem;
+  font-size: x-large;
+  font-family: "Dancing Script", cursive;
+  border-radius: 1rem;
+  color: #22223B;
+  margin: 2rem .5rem 0 1rem;
+}
+
+body main #qotd #author, body main #qotd .author, body main #random-quote #author, body main #random-quote .author, body main #favContainer #author, body main #favContainer .author {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-weight: bold;
+  color: #22223B;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  body main {
+    width: 80%;
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #22223B;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #9A8C98;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #4A4E69;
+  color: #F2E9E4;
+}
+
+.topnav a.active {
+  background-color: #4A4E69;
+  color: azure;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    color: #F2E9E4;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #F2E9E4;
+  }
+  .topnav.responsive .icon:hover {
+    color: #F2E9E4;
+    background-color: #22223B;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #22223B;
+  padding: 20px;
+  color: azure;
+  /* Clear floats after the columns */
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+}
+
+.container input[type=text], .container select, .container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #9A8C98;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.container label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.container input[type=submit] {
+  background-color: #9A8C98;
+  color: azure;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.container input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.container .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.container .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .container .col-25, .container .col-75, .container input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.search input[type=text] {
+  width: 130px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #F2E9E4;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #22223B;
+  background-image: url("../img/search_icon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search input[type=text]:focus {
+  width: 100%;
+  color: azure;
+}
+
+.btn {
+  background-color: #4A4E69;
+  color: azure;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#options .btn {
+  margin: 1rem;
+  float: right;
+}
+
+#options .btn:disabled {
+  background-color: #9A8C98;
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=styles.css.map */

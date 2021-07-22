@@ -1,0 +1,50 @@
+//---------- FONTS -----------//
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inconsolata:wght@900&family=Indie+Flower&family=Kirang+Haerang&family=Libre+Barcode+128+Text&family=Philosopher:wght@700&family=Roboto&family=Viaoda+Libre&display=swap');
+
+$font-heading: 'Philosopher', sans-serif;
+$font-body: 'Roboto', sans-serif;
+
+// Libre Barcode 128 Text
+$font-select-1: 'Libre Barcode 128 Text', cursive;
+
+// Indie Flower
+$font-select-2: 'Indie Flower', cursive;
+
+// Dancing Script:
+$font-select-3: 'Dancing Script', cursive;
+
+// Kirang Haerang
+$font-select-4: 'Kirang Haerang', cursive;
+
+// Inconsolata
+$font-select-5: 'Inconsolata', monospace;
+
+// Viaoda Libre
+$font-select-6: 'Viaoda Libre', cursive;
+
+
+//---------- COLOR PALETTE -----------//
+
+// Space Cadet
+$color-dark: #22223B;
+
+// Independence
+$color-primary: #4A4E69;
+
+// Heliotrope Gray
+$color-neutral: #9A8C98;
+
+// Silver Pink
+$color-secondary: #C9ADA7;
+
+// Isabelline
+$color-light: #F2E9E4;
+
+@mixin button {
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $color-light;
+    background-color: $color-primary;
+}

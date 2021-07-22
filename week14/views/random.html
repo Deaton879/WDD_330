@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../scss/styles.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="../index.html">Home</a>
+    <a href="./random.html"  class="active">Random</a>
+    <a href="./search.html">Search</a>
+    <a href="./add.html">Add</a>
+    <a href="./favorites.html">Favorites</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <main>
+    <header>
+      <h1>Random Quote Generator</h1>
+    </header>
+    <div id="random-quote">
+    </div>
+    <div id="options">
+        <button onclick="saveQuote()" class="btn" id="saveButton" disabled>Save</button>
+        <button onclick="generateRandomQuote()" class="btn">Generate Random Quote</button>
+    </div>
+  </main>
+
+  <script src="../js/random.js"></script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    const quoteController = {
+      baseUrl: 'https://api.quotable.io/',
+
+      async randomQuote() {
+        let url = this.baseUrl + 'random';
+        
+        const response = await fetch(url)
+        const data = await response.json()
+        //  console.log(data)
+        return data;
+      }
+    }
+
+    function generateRandomQuote() {
+
+      // Grab the content and author elements to fill with data
+      let content = document.getElementById('content');
+      let author = document.getElementById('author');
+
+      // Empty contents if generating new random quote
+      let quote = quoteController.randomQuote();
+
+      quote.then(
+        // If the promise is fulfilled...
+        function(value) {
+          // Create quote using the value data
+          content.innerHTML = value.content;
+          author.innerHTML = "- " + value.author;
+          localStorage.setItem('random-content', value.content);
+          localStorage.setItem('random-author', value.author);
+        },
+        // Otherwise...
+        function(error) {
+          console.log(error);
+        }
+      );
+
+      document.getElementById('saveButton').removeAttribute('disabled')
+
+    }
+
+    // Save to favorites list
+    function saveQuote() {
+      let favorites = JSON.parse(localStorage.getItem("favorites"));
+      let newFav = { content: localStorage.getItem('random-content'), author: localStorage.getItem('random-author')}
+      
+      if(favorites.length > 0) {
+
+        const gate = favorites.every(quote => {
+          if(quote.author === newFav.author || quote.content === newFav.content) {
+            return false;
+          } 
+          
+          return true;
+        });
+
+        if(gate === true) {
+          favorites.push(newFav)
+          localStorage.setItem('favorites', JSON.stringify(favorites))
+        } else { console.log('Quote already on favorites list'); }
+      } else { 
+        favorites.push(newFav)
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+      }
+      
+
+      console.log(favorites)
+    }
+  </script>
+</body>
+
+</html>
