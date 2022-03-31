@@ -56,7 +56,7 @@ function drawPattern() {
     var context = canvas.getContext("2d");
     context.strokeStyle = "red";
     var img = new Image(); 
-    img.src = "../../img/pokeball.png";
+    img.src = "../img/pokeball.png";
 
     img.onload = function() {
         var pattern = context.createPattern(img, "repeat");
